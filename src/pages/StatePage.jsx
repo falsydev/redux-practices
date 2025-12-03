@@ -39,12 +39,7 @@ export default function StatePage() {
             </p>
 
             <p>Local state is your foundation. Everything else builds on it.</p>
-          </>
-        }
-        demo={
-          <>
-            <h3>Local Counter Demo</h3>
-            <CounterLocal /> <h3>Source</h3>
+            <h4 className="mb-2">Code</h4>
             <CodeSnippet className="mb-4">{`import { useState } from "react";
 
 export default function CounterLocal() {
@@ -67,6 +62,12 @@ export default function CounterLocal() {
     </div>
   );
 }`}</CodeSnippet>
+          </>
+        }
+        demo={
+          <>
+            <h3>Local Counter Demo</h3>
+            <CounterLocal />
           </>
         }
       ></AppLayout>
