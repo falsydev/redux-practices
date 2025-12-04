@@ -1,8 +1,9 @@
-import React from "react";
 import CounterRedux from "../features/counter/CounterRedux";
 import AppLayout from "../components/AppLayout";
 import PageHeading from "../components/PageHeading";
 import CodeSnippet from "../components/CodeSnippet";
+import { Provider } from "react-redux";
+import { store } from "../redux-app/Redux/store"; // Redux store
 
 export default function ReduxPage() {
   return (
@@ -79,7 +80,8 @@ export default function counterReducer(state = { count: 0 }, action) {
             </p>
             <h4 className="mb-2">Code</h4>
             <CodeSnippet>
-              {`import {createStore} from "redux";
+              {`// store.js
+import {createStore} from "redux";
 import counterReducer from "./reducer";
 
 export const store = createStore(counterReducer);`}
@@ -92,7 +94,8 @@ export const store = createStore(counterReducer);`}
             </p>{" "}
             <h4 className="mb-2">Code</h4>
             <CodeSnippet>
-              {`import { createRoot } from "react-dom/client";
+              {`// index.jsx
+import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import { store } from "./app/store.js";
 import { Provider } from "react-redux";
@@ -122,7 +125,8 @@ createRoot(document.getElementById("root")).render(
               without using local useState.
             </p>{" "}
             <h4 className="mb-2">Code</h4>
-            <CodeSnippet>{`import { useSelector, useDispatch } from "react-redux";
+            <CodeSnippet>{`// CounterRedux.jsx
+import { useSelector, useDispatch } from "react-redux";
 
 export default function CounterRedux() {
   const count = useSelector((state) => state.count);
@@ -155,7 +159,8 @@ export default function CounterRedux() {
               state tree.
             </p>
             <h4 className="mb-2">Example: Combining reducers</h4>
-            <CodeSnippet>{`import { createStore, combineReducers } from "redux";
+            <CodeSnippet>{`// store.js
+import { createStore, combineReducers } from "redux";
 import counterReducer from "./counterReducer";
 import todosReducer from "./todosReducer";
 
@@ -183,7 +188,9 @@ const todos = useSelector(state => state.todos.value);`}
         demo={
           <>
             <h3>Redux Counter Demo</h3>
-            <CounterRedux />
+            <Provider store={store}>
+              <CounterRedux />
+            </Provider>
             <h4>Steps to implement</h4>
             <ul className="list list-decimal">
               <li>Create the Reducer (state logic)</li>

@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "../../redux-app/RTK/counterSlice";
 
-export default function CounterRedux() {
-  const count = useSelector((state) => state.count);
+export default function CounterRTK() {
+  const count = useSelector((state) => state.counterRTK.value);
   const dispatch = useDispatch();
 
   return (
@@ -10,7 +11,7 @@ export default function CounterRedux() {
       <div className="flex items-center space-x-4">
         <button
           className="px-3 py-1 bg-gray-600 text-white rounded"
-          onClick={() => dispatch({ type: "decrement" })}
+          onClick={() => dispatch(decrement())}
           aria-label="decrement"
         >
           -
@@ -18,7 +19,7 @@ export default function CounterRedux() {
         {/* <div>{count}</div> */}
         <button
           className="px-3 py-1 bg-green-700 text-white rounded"
-          onClick={() => dispatch({ type: "increment" })}
+          onClick={() => dispatch(increment())}
           aria-label="increment"
         >
           +

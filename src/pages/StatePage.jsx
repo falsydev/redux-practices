@@ -57,8 +57,8 @@ export default function CounterLocal() {
     <div>
       <p>Count: {count}</p>
 
-      <button onClick={decrement}> - </button>
-      <button onClick={increment}> + </button>
+      <button onClick={decrement}>-</button>
+      <button onClick={increment}>+</button>
     </div>
   );
 }`}</CodeSnippet>
