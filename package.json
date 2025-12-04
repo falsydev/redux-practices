@@ -1,5 +1,5 @@
 {
-  "homepage": "https://saravananwd.github.io/redux-practices/",
+  "homepage": "https://falsydev.github.io/redux-practices/",
   "name": "redux-practices",
   "private": true,
   "version": "0.0.0",
@@ -9,6 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "postbuild": "cp dist/index.html dist/404.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
