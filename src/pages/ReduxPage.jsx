@@ -8,10 +8,10 @@ import { store } from "../redux-app/Redux/store"; // Redux store
 export default function ReduxPage() {
   return (
     <>
-      <PageHeading>Redux</PageHeading>
       <AppLayout
         children={
           <>
+            <PageHeading>Redux</PageHeading>
             <h2>What is Redux State?</h2>
             <p>
               Redux state is global state stored in a single place called the

@@ -6,11 +6,10 @@ import CodeSnippet from "../components/CodeSnippet";
 export default function StatePage() {
   return (
     <>
-      <PageHeading>useState</PageHeading>
-
       <AppLayout
         children={
           <>
+            <PageHeading>useState</PageHeading>
             <h2>What is Local State?</h2>
             <p>
               Local state is data that lives inside a single component. You

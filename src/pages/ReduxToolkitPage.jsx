@@ -8,11 +8,12 @@ import { store } from "../redux-app/RTK/store"; // RTK store
 export default function ReduxToolkitPage() {
   return (
     <>
-      <PageHeading>Redux Toolkit</PageHeading>
       <AppLayout
         children={
           <>
-            <h2>Redux Toolkit (RTK)</h2>
+            {" "}
+            <PageHeading>Redux Toolkit (RTK)</PageHeading>
+            {/* <h2>Redux Toolkit (RTK)</h2> */}
             <p>
               Redux Toolkit is the modern, recommended way to use Redux.
               <br />
@@ -99,7 +100,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             </CodeSnippet>
             <h3 className="pt-4">Step 4: Create the Counter Component</h3>
             <p>Use RTK-generated actions + useSelector + useDispatch.</p>
-
             <h4 className="mb-2">Code</h4>
             <CodeSnippet>{`// CounterRTK.jsx
 import { useSelector, useDispatch } from "react-redux";
