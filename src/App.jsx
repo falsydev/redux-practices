@@ -11,6 +11,7 @@ import BreadCrumb from "./components/BreadCrumb";
 import { Link } from "react-router-dom";
 import PageHeading from "./components/PageHeading";
 import { useLocation } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   const location = useLocation();
@@ -26,7 +27,7 @@ function App() {
             <Link
               key={item.path}
               to={item.path}
-              className={`text-blue-100 no-underline font-semibold px-2 ${
+              className={`text-blue-100 no-underline font-semibold px-3 p-2 ${
                 item.path === location.pathname
                   ? "bg-gray-500 hover:no-underline cursor-default"
                   : "hover:underline"
@@ -43,6 +44,7 @@ function App() {
         <Route path="/redux" element={<ReduxPage />} />
         <Route path="/redux-toolkit" element={<ReduxToolkitPage />} />
       </Routes>
+      <Footer></Footer>
     </Layout>
   );
 }

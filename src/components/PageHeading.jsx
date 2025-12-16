@@ -8,7 +8,7 @@ export default function PageHeading({
 }) {
   const Tag = tag;
   return (
-    <Tag className="flex items-center justify mb-6 text-3xl font-bold">
+    <Tag className="flex items-center justify mb-6 mt-2 text-3xl font-bold">
       {showHome && (
         <div className="mr-3 mt-1">
           <Link to="/">
